@@ -1,0 +1,10 @@
+language: node_js  
+node_js:  
+  - "node"
+cache: npm
+
+before_install:
+  - npm ci
+
+script:
+  - npx now --token $NOWTOKEN && npx now --token $NOWTOKEN alias kushka-$TRAVIS_BRANCH.now.sh
